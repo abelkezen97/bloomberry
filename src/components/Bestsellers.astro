@@ -1,0 +1,100 @@
+---
+const bestsellers = [
+  {
+    title: 'Blush Serenity Bouquet',
+    price: '$95.00',
+    image: '/images/flowers.png',
+    rating: 5,
+    reviews: 48
+  },
+  {
+    title: 'The Ultimate Indulgence Gift Box',
+    price: '$120.00',
+    image: '/images/bestseller1.png',
+    rating: 5,
+    reviews: 32
+  },
+  {
+    title: 'Everlasting Elegance Arrangement',
+    price: '$150.00',
+    image: '/images/bestseller2.png',
+    rating: 5,
+    reviews: 27
+  },
+  {
+    title: 'Luxury Celebration Hamper',
+    price: '$180.00',
+    image: '/images/hampers.png',
+    rating: 5,
+    reviews: 21
+  }
+];
+
+const wa = '971501234567';
+---
+<section id="bestsellers" class="w-full bg-white py-16 sm:py-20 lg:py-24 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Centered Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="font-heading text-xl sm:text-2xl tracking-[0.2em] text-[#3D2E27] uppercase font-medium">
+        BEST SELLERS
+      </h2>
+    </div>
+
+    <!-- 4-Column Product Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 sm:gap-x-8">
+      {bestsellers.map(p => {
+        const msg = encodeURIComponent(`Hi Bloom & Berry, I would like to order the "${p.title}" ($${p.price.replace('$', '')}). Can we coordinate delivery?`);
+        return (
+          <div class="group flex flex-col">
+            <!-- Product Image -->
+            <div class="relative overflow-hidden aspect-[4/5] bg-gray-50 mb-4 rounded-sm">
+              <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener">
+                <img 
+                  src={p.image} 
+                  alt={p.title} 
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
+                  loading="lazy" 
+                />
+              </a>
+            </div>
+
+            <!-- Product Title -->
+            <h3 class="font-body text-xs sm:text-sm font-medium text-gray-800 hover:text-[#BF866E] transition-colors line-clamp-2">
+              <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener">{p.title}</a>
+            </h3>
+
+            <!-- Price -->
+            <span class="font-body text-xs sm:text-sm text-gray-600 mt-1 font-semibold">
+              {p.price}
+            </span>
+
+            <!-- Star Rating & Review Count (Exact matching style) -->
+            <div class="flex items-center gap-1.5 mt-2">
+              <div class="flex text-[#BF866E] gap-0.5">
+                {[...Array(5)].map(() => (
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span class="font-body text-[10px] sm:text-xs text-gray-400 font-light">
+                ({p.reviews})
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Center solid Action Button -->
+    <div class="flex justify-center mt-12 sm:mt-16">
+      <a href={`https://wa.me/${wa}?text=${encodeURIComponent("Hi Bloom & Berry, I'd like to browse your full premium catalog.")}`} 
+         target="_blank" 
+         rel="noopener"
+         class="inline-flex items-center justify-center bg-[#BF866E] hover:bg-[#A8684F] text-white text-xs font-body tracking-[0.2em] uppercase px-10 py-3.5 transition-colors duration-300 shadow-sm rounded-sm">
+        VIEW ALL PRODUCTS
+      </a>
+    </div>
+  </div>
+</section>

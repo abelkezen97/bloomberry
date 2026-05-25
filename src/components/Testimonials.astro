@@ -1,0 +1,43 @@
+---
+const testimonials = [
+  { name: 'Sarah A.', role: 'Dubai', text: "The most exquisite hamper I've ever received. Bloom & Berry transformed a simple birthday into an unforgettable experience. The attention to detail is remarkable.", rating: 5 },
+  { name: 'Fatima K.', role: 'Abu Dhabi', text: "We ordered corporate gifts for 200 employees during Ramadan. The quality, presentation, and timely delivery exceeded all expectations. Truly world-class service.", rating: 5 },
+  { name: 'Layla M.', role: 'Sharjah', text: "My wedding favors were absolute perfection. Every guest commented on the beautiful packaging and thoughtful curation. I couldn't be happier!", rating: 5 },
+  { name: 'Nadia R.', role: 'Dubai', text: "Same-day delivery that actually feels premium — not rushed. The flowers arrived fresh, perfectly arranged, with the most beautiful wrapping I've ever seen.", rating: 5 },
+];
+---
+<section id="testimonials" class="py-16 sm:py-24 lg:py-32 bg-blush-light/20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="text-center mb-12 sm:mb-16 reveal">
+      <p class="text-[10px] sm:text-xs tracking-[0.3em] uppercase font-body text-rose-gold mb-3">Client Love</p>
+      <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl text-deep">What Our <span class="italic text-rose-gold">Clients</span> Say</h2>
+    </div>
+    <!-- Horizontal scroll on mobile, grid on desktop -->
+    <div class="flex lg:grid lg:grid-cols-2 gap-4 sm:gap-6 overflow-x-auto pb-4 lg:pb-0 snap-x snap-mandatory scrollbar-hide -mx-5 px-5 lg:mx-0 lg:px-0">
+      {testimonials.map((t, i) => (
+        <div class={`flex-shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto snap-center bg-white rounded-2xl p-6 sm:p-8 luxury-shadow reveal reveal-delay-${Math.min(i + 1, 4)}`}>
+          <div class="flex gap-1 mb-4">
+            {Array.from({ length: t.rating }).map(() => (
+              <svg class="w-4 h-4 text-rose-gold" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            ))}
+          </div>
+          <p class="font-body font-light text-sm text-deep-soft leading-relaxed mb-5 italic">"{t.text}"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-blush flex items-center justify-center">
+              <span class="font-heading text-sm text-rose-gold-dark">{t.name[0]}</span>
+            </div>
+            <div>
+              <p class="font-body text-sm font-medium text-deep">{t.name}</p>
+              <p class="font-body text-xs text-taupe">{t.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>

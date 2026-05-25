@@ -1,0 +1,34 @@
+---
+const wa = '971501234567';
+const msg = encodeURIComponent("Hi Bloom & Berry, I need corporate gifting assistance for my company.");
+---
+<section id="corporate" class="py-16 sm:py-24 lg:py-32 bg-champagne/20">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div class="relative rounded-2xl overflow-hidden reveal order-2 lg:order-1">
+        <img src="/images/corporate.png" alt="Luxury corporate gifts Dubai — Bloom & Berry" class="w-full aspect-[4/3] object-cover rounded-2xl" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-deep/30 to-transparent rounded-2xl"></div>
+      </div>
+      <div class="reveal reveal-delay-2 order-1 lg:order-2">
+        <p class="text-[10px] sm:text-xs tracking-[0.3em] uppercase font-body text-rose-gold mb-3">B2B Gifting Solutions</p>
+        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl text-deep mb-4">Elevate Your <span class="italic text-rose-gold">Corporate</span> Gifting</h2>
+        <p class="font-body font-light text-sm sm:text-base text-deep-soft leading-relaxed mb-6">
+          From executive welcome kits to large-scale Ramadan gifting programs, we craft premium corporate gifting experiences that leave lasting impressions. Trusted by Fortune 500 companies across the UAE.
+        </p>
+        <ul class="space-y-3 mb-8">
+          {['Customized branding & packaging', 'Bulk order capabilities', 'Dedicated account manager', 'UAE-wide delivery logistics'].map(item => (
+            <li class="flex items-center gap-3 text-sm font-body text-deep-soft">
+              <svg class="w-4 h-4 text-rose-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2.5 bg-deep hover:bg-deep-soft text-white px-7 py-3.5 rounded-full text-sm font-body font-medium tracking-wide transition-all">
+          Request Corporate Catalogue
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

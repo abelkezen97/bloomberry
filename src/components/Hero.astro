@@ -1,0 +1,36 @@
+---
+const wa = '971501234567';
+const msg = encodeURIComponent("Hi Bloom & Berry, I'd like to place an order from your Premium Gifting collections.");
+---
+<section id="hero" class="relative w-full overflow-hidden bg-[#FEF9F6] py-16 sm:py-24 lg:py-32 flex items-center justify-center min-h-[500px] lg:min-h-[620px]">
+  <!-- Exact background image matching mock visual -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/hero.png" alt="Premium Gifting Collections" class="w-full h-full object-cover object-center opacity-95" loading="eager" fetchpriority="high" />
+    <!-- Ultra soft light gradient overlay for maximum readability of dark text -->
+    <div class="absolute inset-0 bg-white/10 sm:bg-transparent"></div>
+  </div>
+
+  <!-- Content (Centered precisely like mock) -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-2xl mx-auto">
+      <!-- Premium Editorial Headline -->
+      <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] text-[#3D2E27] font-medium leading-[1.2] tracking-wide mb-4">
+        Premium Gifting.<br/>
+        <span class="font-heading font-normal">Timeless Moments.</span>
+      </h1>
+
+      <!-- Elegant subtitle -->
+      <p class="font-body font-light text-sm sm:text-base text-gray-700 max-w-md mx-auto mb-8 sm:mb-9 leading-relaxed">
+        Luxury flowers and curated gifts, <span class="italic font-serif">thoughtfully delivered.</span>
+      </p>
+
+      <!-- Exact rectangular luxury button -->
+      <div class="flex justify-center">
+        <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener" id="hero-wa"
+           class="inline-flex items-center justify-center bg-[#BF866E] hover:bg-[#A8684F] text-white text-xs font-body tracking-[0.2em] uppercase px-10 py-3.5 transition-colors duration-300 shadow-sm rounded-sm">
+          SHOP NOW
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+const wa = '971501234567';
+const msg = encodeURIComponent("Hi Bloom & Berry, I'd like to discuss wedding/event gifting options.");
+---
+<section id="weddings" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="/images/wedding.png" alt="Luxury wedding floral styling Dubai" class="w-full h-full object-cover" loading="lazy" />
+    <div class="absolute inset-0 bg-deep/60"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
+    <div class="max-w-2xl mx-auto reveal">
+      <p class="text-[10px] sm:text-xs tracking-[0.3em] uppercase font-body text-rose-gold-light mb-4">Weddings & Events</p>
+      <h2 class="font-heading text-2xl sm:text-3xl lg:text-5xl text-white mb-4 sm:mb-6">Make Every <span class="italic text-blush">Celebration</span> Unforgettable</h2>
+      <p class="font-body font-light text-sm sm:text-base text-white/80 leading-relaxed mb-8 max-w-lg mx-auto">
+        From intimate wedding favors to grand event styling, our team creates breathtaking floral and gifting experiences that transform your celebrations into timeless memories.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center gap-2.5 bg-rose-gold hover:bg-rose-gold-dark text-white px-7 py-3.5 rounded-full text-sm font-body font-medium tracking-wide transition-all">
+          Plan Your Event
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+        <a href="/collections/weddings"
+           class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-7 py-3.5 rounded-full text-sm font-body tracking-wide transition-all border border-white/20">
+          View Gallery
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+const wa = '971501234567';
+const msg = encodeURIComponent("Hi Bloom & Berry, I'd like to consult on custom floral arrangements for an upcoming occasion.");
+---
+<section id="occasions" class="w-full bg-white py-16 sm:py-20 lg:py-24 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Widescreen Banner Container (Ivory-Soft Background) -->
+    <div class="relative overflow-hidden bg-[#FEF9F6] rounded-sm shadow-sm flex flex-col md:flex-row items-center min-h-[360px]">
+      <!-- Left side: Text & CTA -->
+      <div class="flex-1 p-8 sm:p-12 lg:p-16 z-10 text-left">
+        <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl text-[#3D2E27] font-medium leading-[1.25] tracking-wide mb-4 max-w-md">
+          Make Every Occasion Unforgettable
+        </h2>
+        <p class="font-body font-light text-sm sm:text-base text-gray-600 max-w-sm mb-8 sm:mb-10 leading-relaxed">
+          From birthdays to celebrations, we're here to help you say it beautifully.
+        </p>
+        <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener"
+           class="inline-flex items-center justify-center bg-[#BF866E] hover:bg-[#A8684F] text-white text-xs font-body tracking-[0.2em] uppercase px-8 py-3.5 transition-colors duration-300 shadow-sm rounded-sm">
+          SHOP OCCASIONS
+        </a>
+      </div>
+
+      <!-- Right side: Beautiful flower layout image -->
+      <div class="flex-1 w-full h-[280px] md:h-full relative overflow-hidden self-stretch">
+        <img 
+          src="/images/flowers.png" 
+          alt="Luxury bouquets and occasional styling" 
+          class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-700 hover:scale-103" 
+          loading="lazy" 
+        />
+        <!-- Subtle shadow/fade overlay from the left inside image -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#FEF9F6]/10 to-transparent"></div>
+      </div>
+    </div>
+  </div>
+</section>
