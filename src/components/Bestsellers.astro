@@ -1,6 +1,7 @@
 ---
 const bestsellers = [
   {
+    id: 'blush-serenity',
     title: 'Blush Serenity Bouquet',
     price: 'AED 350',
     image: '/images/flowers.png',
@@ -8,6 +9,7 @@ const bestsellers = [
     reviews: 48
   },
   {
+    id: 'ultimate-indulgence',
     title: 'The Ultimate Indulgence Gift Box',
     price: 'AED 440',
     image: '/images/bestseller1.png',
@@ -15,6 +17,7 @@ const bestsellers = [
     reviews: 32
   },
   {
+    id: 'everlasting-elegance',
     title: 'Everlasting Elegance Arrangement',
     price: 'AED 550',
     image: '/images/bestseller2.png',
@@ -22,6 +25,7 @@ const bestsellers = [
     reviews: 27
   },
   {
+    id: 'luxury-celebration',
     title: 'Luxury Celebration Hamper',
     price: 'AED 660',
     image: '/images/hampers.png',
@@ -49,7 +53,7 @@ const wa = '971501234567';
           <div class="group flex flex-col">
             <!-- Product Image -->
             <div class="relative overflow-hidden aspect-[4/5] bg-gray-50 mb-4 rounded-sm">
-              <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener">
+              <a href={`/products/${p.id}`}>
                 <img 
                   src={p.image} 
                   alt={p.title} 
@@ -60,8 +64,8 @@ const wa = '971501234567';
             </div>
 
             <!-- Product Title -->
-            <h3 class="font-body text-xs sm:text-sm font-medium text-gray-800 hover:text-[#BF866E] transition-colors line-clamp-2">
-              <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener">{p.title}</a>
+            <h3 class="font-body text-xs sm:text-sm font-medium text-gray-800 hover:text-[#BF866E] transition-colors line-clamp-2 min-h-[32px] sm:min-h-[40px]">
+              <a href={`/products/${p.id}`}>{p.title}</a>
             </h3>
 
             <!-- Price -->
@@ -89,9 +93,7 @@ const wa = '971501234567';
 
     <!-- Center solid Action Button -->
     <div class="flex justify-center mt-12 sm:mt-16">
-      <a href={`https://wa.me/${wa}?text=${encodeURIComponent("Hi Bloom & Berry, I'd like to browse your full premium catalog.")}`} 
-         target="_blank" 
-         rel="noopener"
+      <a href="/collections/all" 
          class="inline-flex items-center justify-center bg-[#BF866E] hover:bg-[#A8684F] text-white text-xs font-body tracking-[0.2em] uppercase px-10 py-3.5 transition-colors duration-300 shadow-sm rounded-sm">
         VIEW ALL PRODUCTS
       </a>

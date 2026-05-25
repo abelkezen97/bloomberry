@@ -41,7 +41,7 @@ const wa = '971501234567';
           <div class="group flex flex-col text-center">
             <!-- Image with smooth hover effect -->
             <div class="relative overflow-hidden aspect-[4/5] bg-gray-50 mb-5 rounded-sm">
-              <a href={`https://wa.me/${wa}?text=${msg}`} target="_blank" rel="noopener">
+              <a href={c.link}>
                 <img 
                   src={c.image} 
                   alt={c.title} 
@@ -56,9 +56,7 @@ const wa = '971501234567';
             </h3>
             <!-- Link -->
             <a 
-              href={`https://wa.me/${wa}?text=${msg}`} 
-              target="_blank" 
-              rel="noopener"
+              href={c.link}
               class="font-body text-[10px] sm:text-xs font-semibold tracking-wider text-[#BF866E] hover:text-[#A8684F] transition-colors mt-1 inline-flex items-center justify-center gap-1"
             >
               SHOP NOW <span class="text-xs">→</span>
