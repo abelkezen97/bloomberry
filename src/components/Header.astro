@@ -78,7 +78,7 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
         <img 
           src="/images/Rosegoldlogo.svg" 
           alt="Bloom & Berry" 
-          class="h-12 w-auto object-contain"
+          class="h-[4.5rem] w-auto object-contain"
         />
       </a>
       
@@ -98,11 +98,23 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
 
   <!-- Mobile Full-Screen Menu Overlay -->
   <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
-    <div class="flex-1 flex flex-col justify-center px-8 pt-20 pb-10">
+    <div class="flex-1 flex flex-col justify-center px-8 pt-20 pb-10 relative">
+      
       <!-- Minimalist Brand Header in Overlay -->
       <div class="absolute top-6 left-1/2 -translate-x-1/2">
         <img src="/images/Rosegoldlogo.svg" alt="Bloom & Berry" class="h-12 w-auto object-contain" />
       </div>
+
+      <!-- Elegant Close Button in Overlay -->
+      <button 
+        id="menu-close" 
+        class="absolute top-6 right-6 p-2 text-gray-700 hover:text-[#BF866E] focus:outline-none transition-colors" 
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
 
       <nav class="space-y-4 text-center" aria-label="Mobile navigation">
         {navLinks.map((link, i) => (
@@ -129,33 +141,37 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
   const announcementBar = document.getElementById('announcement-bar');
   const closeAnnouncement = document.getElementById('close-announcement');
   const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
-  let isOpen = false;
 
   // Dismiss Announcement Bar
   closeAnnouncement?.addEventListener('click', () => {
     announcementBar?.classList.add('hidden');
   });
 
-  // Mobile menu toggle
-  menuToggle?.addEventListener('click', () => {
-    isOpen = !isOpen;
-    if (isOpen) {
-      mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
-      mobileMenu?.classList.add('opacity-100');
-      document.body.style.overflow = 'hidden';
-      document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        (link as HTMLElement).style.transform = 'translateY(0)';
-        (link as HTMLElement).style.opacity = '1';
-      });
-    } else {
-      mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
-      mobileMenu?.classList.remove('opacity-100');
-      document.body.style.overflow = '';
-      document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        (link as HTMLElement).style.transform = 'translateY(24px)';
-        (link as HTMLElement).style.opacity = '0';
-      });
-    }
-  });
+  // Open overlay function
+  const openOverlay = () => {
+    mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
+    mobileMenu?.classList.add('opacity-100');
+    document.body.style.overflow = 'hidden';
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      (link as HTMLElement).style.transform = 'translateY(0)';
+      (link as HTMLElement).style.opacity = '1';
+    });
+  };
+
+  // Close overlay function
+  const closeOverlay = () => {
+    mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+    mobileMenu?.classList.remove('opacity-100');
+    document.body.style.overflow = '';
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      (link as HTMLElement).style.transform = 'translateY(24px)';
+      (link as HTMLElement).style.opacity = '0';
+    });
+  };
+
+  // Register Event Listeners
+  menuToggle?.addEventListener('click', openOverlay);
+  menuClose?.addEventListener('click', closeOverlay);
 </script>
