@@ -33,10 +33,10 @@ const whatsappNumber = '971501234567';
     <section class="w-full bg-[#FAF4EF] py-16 sm:py-20 lg:py-24 border-b border-gray-100/50">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         <!-- Breadcrumbs -->
-        <div class="flex justify-center items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-body text-gray-400 mb-6">
+        <div class="flex justify-center items-center gap-2 text-[10px] tracking-[0.2em] uppercase font-body text-gray-600 mb-6">
           <a href="/" class="hover:text-[#BF866E] transition-colors">Home</a>
           <span>/</span>
-          <span class="text-gray-600">Collections</span>
+          <span class="text-gray-700">Collections</span>
           <span>/</span>
           <span class="text-gray-800 font-medium">{currentCollection.title}</span>
         </div>
@@ -47,12 +47,12 @@ const whatsappNumber = '971501234567';
         </h1>
         
         <!-- Collection Description -->
-        <p class="font-body font-light text-sm sm:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
+        <p class="font-body font-normal text-sm sm:text-base text-gray-700 max-w-xl mx-auto leading-relaxed">
           {currentCollection.description}
         </p>
 
         <!-- Quick Info stats -->
-        <div class="mt-8 flex justify-center items-center gap-6 text-[10px] sm:text-xs tracking-[0.15em] font-body text-gray-500 font-light">
+        <div class="mt-8 flex justify-center items-center gap-6 text-[10px] sm:text-xs tracking-[0.15em] font-body text-gray-700 font-normal">
           <span>{filteredProducts.length} EXQUISITE ITEMS</span>
         </div>
       </div>
@@ -63,8 +63,8 @@ const whatsappNumber = '971501234567';
       
       {filteredProducts.length === 0 ? (
         <div class="text-center py-20 bg-white border border-gray-100 rounded-sm">
-          <p class="font-heading text-lg text-gray-500 uppercase tracking-widest mb-4">No arrangements available</p>
-          <p class="font-body text-sm text-gray-400 max-w-xs mx-auto mb-8 font-light">We are hand-crafting new designs. Chat with our studio directly for custom requests.</p>
+          <p class="font-heading text-lg text-gray-700 uppercase tracking-widest mb-4">No arrangements available</p>
+          <p class="font-body text-sm text-gray-600 max-w-xs mx-auto mb-8 font-normal">We are hand-crafting new designs. Chat with our studio directly for custom requests.</p>
           <a href={`https://wa.me/${whatsappNumber}`} class="inline-flex justify-center bg-[#BF866E] text-white text-xs font-body tracking-[0.2em] uppercase px-8 py-3.5 rounded-sm hover:bg-[#A8684F] transition-colors">
             CONTACT CONCIERGE
           </a>
@@ -105,7 +105,7 @@ const whatsappNumber = '971501234567';
                         </svg>
                       ))}
                     </div>
-                    <span class="font-body text-[9px] text-gray-400 font-light">({p.reviews})</span>
+                    <span class="font-body text-[9px] text-gray-600 font-normal">({p.reviews})</span>
                   </div>
 
                   <!-- Price Tag -->
@@ -126,7 +126,7 @@ const whatsappNumber = '971501234567';
                     
                     <a 
                       href={`/products/${p.id}`}
-                      class="w-full inline-flex items-center justify-center border border-gray-100 hover:border-gray-300 text-gray-500 hover:text-gray-700 text-[9px] font-body tracking-[0.2em] uppercase py-2 transition-all duration-300 rounded-sm bg-white"
+                      class="w-full inline-flex items-center justify-center border border-gray-100 hover:border-gray-300 text-gray-700 hover:text-gray-900 text-[9px] font-body tracking-[0.2em] uppercase py-2 transition-all duration-300 rounded-sm bg-white"
                     >
                       VIEW DETAILS
                     </a>
@@ -147,15 +147,15 @@ const whatsappNumber = '971501234567';
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div class="flex flex-col items-center">
             <span class="font-heading text-xs tracking-[0.2em] uppercase text-gray-800 mb-2 font-medium">Bespoke Monograms</span>
-            <p class="font-body text-[11px] font-light text-gray-400 max-w-xs">Custom monogram hand-painting and gold-leaf stampings available upon request.</p>
+            <p class="font-body text-[11px] font-normal text-gray-600 max-w-xs">Custom monogram hand-painting and gold-leaf stampings available upon request.</p>
           </div>
           <div class="flex flex-col items-center border-y border-gray-100 md:border-y-0 md:border-x py-6 md:py-0">
             <span class="font-heading text-xs tracking-[0.2em] uppercase text-gray-800 mb-2 font-medium">VIP White-Glove Fleet</span>
-            <p class="font-body text-[11px] font-light text-gray-400 max-w-xs">Arranged in temperature-controlled Sprinter vans for absolute floral perfection.</p>
+            <p class="font-body text-[11px] font-normal text-gray-600 max-w-xs">Arranged in temperature-controlled Sprinter vans for absolute floral perfection.</p>
           </div>
           <div class="flex flex-col items-center">
             <span class="font-heading text-xs tracking-[0.2em] uppercase text-gray-800 mb-2 font-medium">Direct Concierge</span>
-            <p class="font-body text-[11px] font-light text-gray-400 max-w-xs">Skip the forms. Co-create customized luxury gifting with our studio designers via WhatsApp.</p>
+            <p class="font-body text-[11px] font-normal text-gray-600 max-w-xs">Skip the forms. Co-create customized luxury gifting with our studio designers via WhatsApp.</p>
           </div>
         </div>
       </div>
