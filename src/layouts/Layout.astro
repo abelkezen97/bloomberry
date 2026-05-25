@@ -76,5 +76,11 @@ const {
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     });
   </script>
+
+  <!-- Vercel Web Analytics integration -->
+  <script>
+    import { inject } from '@vercel/analytics';
+    inject();
+  </script>
 </body>
 </html>
