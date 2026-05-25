@@ -141,6 +141,23 @@ const whatsappNumber = '971553670255';
 
     </section>
 
+    <!-- Contextual Collection Linking Hub (Editorial UX & Crawl Depth) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-[9px] tracking-[0.25em] uppercase font-body text-[#BF866E] font-semibold block mb-4">Curated Navigation</span>
+        <h2 class="font-heading text-xs tracking-[0.2em] text-[#3D2E27] uppercase font-medium mb-6">
+          Explore Gifting Inspiration
+        </h2>
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-[10px] tracking-[0.15em] font-body font-semibold text-[#3D2E27] uppercase">
+          {collections.filter(c => c.id !== currentCollection.id && c.id !== 'all').map(c => (
+            <a href={`/collections/${c.id}`} class="hover:text-[#BF866E] border-b border-transparent hover:border-[#BF866E] transition-all pb-1">
+              {c.title}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- PREMIUM REASSURANCE STRIP -->
     <section class="bg-white border-t border-b border-gray-100 py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

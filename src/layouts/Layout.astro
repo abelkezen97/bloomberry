@@ -36,27 +36,78 @@ const {
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
 
+  <!-- Critical Above-the-Fold LCP Image Preloads -->
+  <link rel="preload" href="/images/mobileheroeid.png" as="image" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" href="/images/eidhero.png" as="image" media="(min-width: 768px)" fetchpriority="high" />
+
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/svg+xml" href="/images/Rosegoldlogo.svg" />
 
   <title>{title}</title>
 
-  <!-- Structured Data -->
+  <!-- Structured Data Graph (Organization, WebSite & LocalBusiness) -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
-    "@type": "FloristShop",
-    "name": "Bloom & Berry",
-    "description": "Luxury hampers, premium flowers, and bespoke gifting experiences in the UAE.",
-    "url": "https://bloomandberry.ae",
-    "telephone": "+971-55-367-0255",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Dubai",
-      "addressCountry": "AE"
-    },
-    "areaServed": ["Dubai", "Abu Dhabi", "Sharjah", "UAE"],
-    "priceRange": "$$$",
-    "image": "/images/eidhero.png"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://bloomberry.ae/#organization",
+        "name": "Bloom & Berry",
+        "url": "https://bloomberry.ae",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://bloomberry.ae/#logo",
+          "url": "https://bloomberry.ae/images/Rosegoldlogo.svg",
+          "caption": "Bloom & Berry Logo"
+        },
+        "sameAs": [
+          "https://instagram.com",
+          "https://facebook.com",
+          "https://pinterest.com"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://bloomberry.ae/#website",
+        "url": "https://bloomberry.ae",
+        "name": "Bloom & Berry",
+        "publisher": {
+          "@id": "https://bloomberry.ae/#organization"
+        }
+      },
+      {
+        "@type": "FloristShop",
+        "@id": "https://bloomberry.ae/#localbusiness",
+        "name": "Bloom & Berry",
+        "description": "Premium luxury hampers, custom flower bouquets, corporate gifting suites, and wedding styling in Dubai and across the UAE.",
+        "url": "https://bloomberry.ae",
+        "telephone": "+971-55-367-0255",
+        "priceRange": "$$$",
+        "image": "https://bloomberry.ae/images/eidhero.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Luxury Gifting Suite, Downtown Dubai",
+          "addressLocality": "Dubai",
+          "addressRegion": "Dubai",
+          "addressCountry": "AE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "25.2048",
+          "longitude": "55.2708"
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Dubai" },
+          { "@type": "AdministrativeArea", "name": "Abu Dhabi" },
+          { "@type": "AdministrativeArea", "name": "Sharjah" },
+          { "@type": "AdministrativeArea", "name": "Ajman" },
+          { "@type": "AdministrativeArea", "name": "United Arab Emirates" }
+        ],
+        "parentOrganization": {
+          "@id": "https://bloomberry.ae/#organization"
+        }
+      }
+    ]
   })} />
 </head>
 <body class="min-h-screen bg-ivory text-deep antialiased">
