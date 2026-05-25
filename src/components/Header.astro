@@ -20,35 +20,39 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
 </div>
 
 <header id="site-header" class="w-full bg-white border-b border-gray-100 transition-all duration-300">
-  <!-- Desktop Header Layout (Exact Match) -->
+  <!-- Desktop & Mobile Header Layout (3-Column Grid for Absolute Center Alignment) -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between py-5 border-b border-gray-50">
-      <!-- Search Input (Left) -->
-      <div class="flex-1 flex max-md:hidden items-center max-w-xs relative">
-        <svg class="w-4 h-4 text-gray-400 absolute left-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-        </svg>
-        <input 
-          type="text" 
-          placeholder="Search" 
-          class="w-full pl-9 pr-4 py-1.5 bg-transparent border-b border-transparent hover:border-gray-200 focus:border-[#BF866E] focus:outline-none text-xs font-body tracking-wider text-gray-600 placeholder-gray-400 transition-colors"
-        />
+    <div class="grid grid-cols-3 items-center py-5 border-b border-gray-50">
+      
+      <!-- COLUMN 1: Search Input on Desktop, Hamburger on Mobile -->
+      <div class="flex items-center justify-start">
+        <!-- Search Input (Desktop Only) -->
+        <div class="w-full max-w-xs relative flex max-md:hidden items-center">
+          <svg class="w-4 h-4 text-gray-400 absolute left-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input 
+            type="text" 
+            placeholder="Search" 
+            class="w-full pl-9 pr-4 py-1.5 bg-transparent border-b border-transparent hover:border-gray-200 focus:border-[#BF866E] focus:outline-none text-xs font-body tracking-wider text-gray-600 placeholder-gray-400 transition-colors"
+          />
+        </div>
+
+        <!-- Hamburger (Mobile Only) -->
+        <button id="menu-toggle" class="md:hidden p-2 text-gray-700 focus:outline-none" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </div>
 
-      <!-- Hamburger (Mobile Left) -->
-      <button id="menu-toggle" class="md:hidden p-2 text-gray-700" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-
-      <!-- Center Logo (SVG Custom Image) -->
-      <a href="/" class="flex flex-col items-center py-1">
-        <img src="/images/Rosegoldlogo.svg" alt="Bloom & Berry" class="h-16 md:h-20 w-auto object-contain" />
+      <!-- COLUMN 2: Absolutely Centered Logo -->
+      <a href="/" class="flex flex-col items-center py-1 justify-self-center">
+        <img src="/images/Rosegoldlogo.svg" alt="Bloom & Berry" class="h-16 md:h-20 w-auto object-contain transition-transform duration-300 hover:scale-102" />
       </a>
 
-      <!-- Right Actions (User & Bag/WhatsApp) -->
-      <div class="flex-1 flex items-center justify-end gap-4 md:gap-5">
+      <!-- COLUMN 3: Right Side Actions (User Account & Shopping Bag/WhatsApp Inquiry) -->
+      <div class="flex items-center justify-end gap-4 md:gap-5 justify-self-end">
         <!-- Account -->
         <a href="#account" class="text-gray-700 hover:text-[#BF866E] transition-colors" aria-label="Account">
           <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
@@ -65,9 +69,10 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
           <span class="absolute top-0 right-0 w-2 h-2 bg-[#BF866E] rounded-full animate-ping"></span>
         </a>
       </div>
+
     </div>
 
-    <!-- Navigation Links Row (Explicit base layout flex and max-md responsive hide to resolve Tailwind v4 specificity) -->
+    <!-- Navigation Links Row -->
     <nav class="flex max-md:hidden justify-center items-center gap-9 py-4" aria-label="Desktop navigation">
       {navLinks.map(link => (
         <a href={link.href} class="text-[11px] font-body font-normal tracking-[0.18em] uppercase text-gray-600 hover:text-[#BF866E] transition-colors duration-300">
