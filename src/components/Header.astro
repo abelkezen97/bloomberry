@@ -24,7 +24,7 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between py-5 border-b border-gray-50">
       <!-- Search Input (Left) -->
-      <div class="flex-1 hidden md:flex items-center max-w-xs relative">
+      <div class="flex-1 flex max-md:hidden items-center max-w-xs relative">
         <svg class="w-4 h-4 text-gray-400 absolute left-3" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>
@@ -67,8 +67,8 @@ const whatsappMessage = encodeURIComponent("Hi Bloom & Berry, I'd like to learn 
       </div>
     </div>
 
-    <!-- Navigation Links Row -->
-    <nav class="hidden md:flex justify-center items-center gap-9 py-4" aria-label="Desktop navigation">
+    <!-- Navigation Links Row (Explicit base layout flex and max-md responsive hide to resolve Tailwind v4 specificity) -->
+    <nav class="flex max-md:hidden justify-center items-center gap-9 py-4" aria-label="Desktop navigation">
       {navLinks.map(link => (
         <a href={link.href} class="text-[11px] font-body font-normal tracking-[0.18em] uppercase text-gray-600 hover:text-[#BF866E] transition-colors duration-300">
           {link.label}
