@@ -1,48 +1,95 @@
 ---
 const faqs = [
-  { q: 'Do you offer same-day delivery in Dubai and Abu Dhabi?', a: 'Yes! We offer same-day delivery across Dubai, Abu Dhabi, Sharjah, and other UAE emirates. Orders placed before 2 PM are eligible for same-day delivery. Contact us on WhatsApp for urgent requests.' },
-  { q: 'Can I customize my luxury hamper or gift box?', a: 'Absolutely! Customization is at the heart of what we do. From selecting specific items to adding personalized messages, monograms, and custom packaging — we create bespoke gifting experiences tailored to your preferences.' },
-  { q: 'How do I place an order with Bloom & Berry?', a: 'Simply browse our collections, select your desired gift, and tap "Order via WhatsApp." Our gifting concierge will guide you through the process, confirm details, and arrange delivery — all through WhatsApp.' },
-  { q: 'Do you provide corporate gifting for large orders?', a: 'Yes, we specialize in corporate gifting programs for companies of all sizes. We offer bulk ordering, custom branding, dedicated account management, and UAE-wide delivery logistics. Contact us for a corporate catalogue.' },
-  { q: 'What occasions do you cater to?', a: 'We cater to every occasion — birthdays, anniversaries, weddings, baby showers, Eid, Ramadan, corporate events, congratulations, thank you gifts, and more. Each gift is thoughtfully curated for the occasion.' },
-  { q: 'How fresh are your flowers?', a: 'We source our flowers from the finest farms worldwide and arrange them fresh daily. Our expert florists ensure every bouquet is crafted with the freshest, most premium blooms available. We guarantee 5-7 days of freshness.' },
-  { q: 'What areas do you deliver to in the UAE?', a: 'We deliver across the entire UAE including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain. Delivery timelines may vary by emirate.' },
-  { q: 'Can I include a personalized message with my gift?', a: 'Of course! Every gift can include a handwritten or printed personalized message card. Simply share your message with our WhatsApp concierge and we will beautifully incorporate it into your gift presentation.' },
+  {
+    question: "Do you offer same-day flower delivery in Dubai and the UAE?",
+    answer: "Yes, we provide complimentary temperature-controlled same-day delivery throughout Dubai, Sharjah, and Ajman for all orders placed before 4:00 PM. For Abu Dhabi and other Emirates, next-day white-glove delivery is standard."
+  },
+  {
+    question: "Can I customize a luxury gifting hamper or floral box?",
+    answer: "Absolutely. Bloom & Berry specializes in bespoke custom hampers. You can personalize your selection with custom gold-leaf monogramming, elite organic sweets, bespoke floral styling, and specific corporate or personal motifs. Contact our concierge via WhatsApp to coordinate."
+  },
+  {
+    question: "How long do your premium floral arrangements remain fresh?",
+    answer: "Our master floral designers arrange every bouquet using premium moisture-locking floral gels and specialized vertical transport frames. With gentle watering, our Ecuadorian roses and fresh phalaenopsis orchids generally remain pristine for 5 to 7 days."
+  },
+  {
+    question: "Do you accommodate corporate gifting and large-scale event orders?",
+    answer: "Yes. Our corporate concierge offers dedicated custom branding, hot-stamped leather embossing, customized packaging, and white-glove logistics for VIP clients, milestones, and high-end brand partnerships across the UAE."
+  },
+  {
+    question: "How are orders processed and delivered?",
+    answer: "To maintain the highest level of boutique service, all orders are coordinated directly via our WhatsApp Concierge (+971 55 367 0255). This allows us to confirm exact custom details, personal messages with hand-sealed wax, and precise delivery windows for every recipient."
+  }
 ];
 ---
-<section id="faq" class="py-16 sm:py-24 lg:py-32 bg-champagne/15">
-  <div class="max-w-3xl mx-auto px-5 sm:px-8">
-    <div class="text-center mb-12 sm:mb-16 reveal">
-      <p class="text-[10px] sm:text-xs tracking-[0.3em] uppercase font-body text-rose-gold mb-3">Common Questions</p>
-      <h2 class="font-heading text-2xl sm:text-3xl lg:text-4xl text-deep">Frequently <span class="italic text-rose-gold">Asked</span></h2>
+<section id="faq" class="w-full bg-white py-16 sm:py-20 lg:py-24 border-b border-gray-100">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Editorial Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <span class="text-[9px] tracking-[0.25em] uppercase font-body text-[#BF866E] font-semibold block mb-2">Concierge Assistant</span>
+      <h2 class="font-heading text-xl sm:text-2xl tracking-[0.2em] text-[#3D2E27] uppercase font-medium">
+        Frequently Asked Questions
+      </h2>
     </div>
-    <div class="space-y-3 reveal" id="faq-list">
-      {faqs.map((f, i) => (
-        <div class="faq-item bg-white rounded-xl luxury-shadow overflow-hidden" data-faq={i}>
-          <button class="faq-toggle w-full flex items-center justify-between p-5 sm:p-6 text-left" aria-expanded="false">
-            <h3 class="font-heading text-sm sm:text-base text-deep pr-4">{f.q}</h3>
-            <span class="accordion-icon flex-shrink-0 w-6 h-6 rounded-full border border-rose-gold/30 flex items-center justify-center text-rose-gold">
-              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
-            </span>
+
+    <!-- Accordion Wrapper -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="border-b border-gray-100 pb-4">
+          <button 
+            type="button"
+            class="faq-trigger w-full flex items-center justify-between py-4 text-left font-heading text-sm sm:text-base text-[#3D2E27] hover:text-[#BF866E] transition-colors focus:outline-none"
+            data-index={index}
+          >
+            <span>{faq.question}</span>
+            <svg class="w-4 h-4 text-gray-400 transition-transform duration-300 transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+            </svg>
           </button>
-          <div class="accordion-content">
-            <p class="px-5 sm:px-6 pb-5 sm:pb-6 font-body font-normal text-sm text-deep leading-relaxed">{f.a}</p>
+          
+          <div class="faq-content hidden max-h-0 overflow-hidden transition-all duration-300 ease-out">
+            <p class="font-body font-normal text-xs sm:text-sm text-gray-700 leading-relaxed pt-2 pb-4 pr-6">
+              {faq.answer}
+            </p>
           </div>
         </div>
       ))}
     </div>
+
   </div>
 </section>
 
 <script>
-  document.querySelectorAll('.faq-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item?.classList.contains('accordion-open');
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('accordion-open'));
-      // Toggle current
-      if (!isOpen) item?.classList.add('accordion-open');
+  // Dynamic smooth toggle for luxury FAQ accordions
+  const triggers = document.querySelectorAll('.faq-trigger');
+  
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const content = trigger.nextElementSibling as HTMLElement;
+      const icon = trigger.querySelector('svg');
+      
+      // Toggle visibility
+      const isOpen = !content.classList.contains('hidden');
+      
+      // Close all other FAQs first for premium clean focus
+      document.querySelectorAll('.faq-content').forEach(c => {
+        c.classList.add('hidden');
+        c.style.maxHeight = '0px';
+      });
+      document.querySelectorAll('.faq-trigger svg').forEach(svg => {
+        svg.classList.remove('rotate-180');
+      });
+      
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon?.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        content.style.maxHeight = '0px';
+        icon?.classList.remove('rotate-180');
+      }
     });
   });
 </script>
