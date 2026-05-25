@@ -2,7 +2,7 @@
 const wa = '971501234567';
 const msg = encodeURIComponent("Hi Bloom & Berry, I'd like to place an order from your Premium Gifting collections.");
 ---
-<section id="hero" class="relative w-full overflow-hidden bg-[#FEF9F6] py-16 sm:py-24 lg:py-32 flex items-center justify-center min-h-[500px] lg:min-h-[620px]">
+<section id="hero" class="relative w-full overflow-hidden bg-[#FEF9F6] pt-12 pb-24 sm:py-24 lg:py-32 flex items-start md:items-center justify-center min-h-[500px] lg:min-h-[620px]">
   <!-- Dynamic responsive background image using <picture> for mobile optimization -->
   <div class="absolute inset-0 z-0">
     <picture>
@@ -11,8 +11,8 @@ const msg = encodeURIComponent("Hi Bloom & Berry, I'd like to place an order fro
       <!-- Mobile Optimized Viewport Hero -->
       <img src="/images/mobilebloom.png" alt="Premium Gifting Collections" class="w-full h-full object-cover object-center opacity-95" loading="eager" fetchpriority="high" />
     </picture>
-    <!-- High-end editorial white wash overlay on mobile to soften high-contrast background and make text 100% legible -->
-    <div class="absolute inset-0 bg-white/60 md:bg-transparent"></div>
+    <!-- Light soft overlay to keep high-contrast readability in clear top space -->
+    <div class="absolute inset-0 bg-white/20 md:bg-transparent"></div>
   </div>
 
   <!-- Content (Centered precisely like mock) -->
