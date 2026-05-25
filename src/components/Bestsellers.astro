@@ -2,28 +2,28 @@
 const bestsellers = [
   {
     title: 'Blush Serenity Bouquet',
-    price: '$95.00',
+    price: 'AED 350',
     image: '/images/flowers.png',
     rating: 5,
     reviews: 48
   },
   {
     title: 'The Ultimate Indulgence Gift Box',
-    price: '$120.00',
+    price: 'AED 440',
     image: '/images/bestseller1.png',
     rating: 5,
     reviews: 32
   },
   {
     title: 'Everlasting Elegance Arrangement',
-    price: '$150.00',
+    price: 'AED 550',
     image: '/images/bestseller2.png',
     rating: 5,
     reviews: 27
   },
   {
     title: 'Luxury Celebration Hamper',
-    price: '$180.00',
+    price: 'AED 660',
     image: '/images/hampers.png',
     rating: 5,
     reviews: 21
@@ -44,7 +44,7 @@ const wa = '971501234567';
     <!-- 4-Column Product Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12 sm:gap-x-8">
       {bestsellers.map(p => {
-        const msg = encodeURIComponent(`Hi Bloom & Berry, I would like to order the "${p.title}" ($${p.price.replace('$', '')}). Can we coordinate delivery?`);
+        const msg = encodeURIComponent(`Hi Bloom & Berry, I would like to order the "${p.title}" (${p.price}). Can we coordinate delivery?`);
         return (
           <div class="group flex flex-col">
             <!-- Product Image -->
