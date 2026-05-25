@@ -189,7 +189,7 @@ export const products = [
     rating: 5,
     reviews: 29,
     tagline: 'The definitive high-end hamper for Ramadan and Eid.',
-    description: 'A pristine, premium circular hamper featuring a bespoke fresh arrangement of delicate phalaenopsis orchids in the center, flanked by an exquisite circular ring of gourmet stuffed dates, organic dry figs, and premium UAE sidr honey.',
+    description: 'A pristine, premium circular hamper featuring a fresh arrangement of delicate phalaenopsis orchids in the center, flanked by an exquisite circular ring of gourmet stuffed dates, organic dry figs, and premium UAE sidr honey.',
     details: [
       'Live premium phalaenopsis orchid plant in custom ceramic pot',
       '32 gourmet Medjool dates stuffed with premium pistachio paste',
@@ -199,5 +199,49 @@ export const products = [
     ],
     packaging: 'Beautiful custom round velvet base box with gold crescent hand-embroidery, transparent dust lid, and signature gold cord handles.',
     delivery: 'Same-day VIP priority courier delivery across Dubai, Sharjah, and Abu Dhabi.'
+  },
+  {
+    id: 'royal-diwali-gold-hamper',
+    title: 'The Royal Diwali Gold Hamper',
+    price: 'AED 890',
+    priceNumber: 890,
+    image: '/images/festive_diwali_hamper.png',
+    collection: 'occasions',
+    rating: 5,
+    reviews: 36,
+    tagline: 'An opulent golden tribute for the Festival of Lights.',
+    description: 'An exceptionally opulent Diwali luxury tribute tray. Features a heavy gold-plated brass master tray filled with premium saffron threads, organic almond and pistachio velvet pouches, certified pure silver coins, and an exquisite array of gourmet North Indian sweets (mithai) decorated with edible silver leaf. Adorned with glowing earthen clay diyas and fresh marigold blossoms.',
+    details: [
+      'Gourmet kaju katli and premium pistachio/almond mithai selection',
+      'Ornate gold-plated floral brass serving tray',
+      'Velvet pouches of organic California almonds and Iranian pistachios',
+      'Three glass jars of Grade-A premium Kashmiri saffron threads',
+      'Certified pure 999 silver coins for festive blessings',
+      'Fresh orange marigolds and six terracotta clay oil diyas'
+    ],
+    packaging: 'Presented on a stunning gold-plated floral brass tray, wrapped in high-clarity festive cellophane, secured with pure raw silk sashes and a traditional red-and-gold mauli tie.',
+    delivery: 'Same-day priority delivery available throughout Dubai and Sharjah. Pre-orders highly recommended for peak Diwali shipping windows.'
+  },
+  {
+    id: 'imperial-shubh-bandhan-box',
+    title: 'The Imperial Shubh Bandhan Box',
+    price: 'AED 620',
+    priceNumber: 620,
+    image: '/images/festive_rakhi_hamper.png',
+    collection: 'occasions',
+    rating: 5,
+    reviews: 24,
+    tagline: 'Celebrate eternal sibling bonds with handcrafted gold-leaf mithai.',
+    description: 'Celebrate sacred sibling bonds, Karwa Chauth, or monsoon Teej with pure royal luxury. Resting inside a round ivory velvet keeping chest is a magnificent hand-woven royal silk rakhi thread decorated with gold beads and pearls, paired with gold-leaf dusted dry-fruit laddoos, glass jars of premium green cardamoms and choice nuts, and fragrant fresh jasmine and red rose garlands.',
+    details: [
+      'Bespoke hand-woven royal silk rakhi thread on a velvet cushion',
+      'Handcrafted dry-fruit royal laddoos topped with 24K gold leaf',
+      'Fine glass jars with gold lids containing premium cardamom pods and mixed nuts',
+      'Ornate glass crystal sweets bowl with brass handles',
+      'Delicate hand-tied fresh red rose and jasmine flower garlands',
+      'Premium round ivory velvet keepsake box with gold embroidery details'
+    ],
+    packaging: 'Presented in our signature round ivory velvet keepsake box, hand-finished with an elegant gold-stitched ivory ribbon sash.',
+    delivery: 'Complimentary same-day express delivery across Dubai, Ajman, and Sharjah.'
   }
 ];

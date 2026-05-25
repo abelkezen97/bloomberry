@@ -16,13 +16,18 @@ const collections = [
     link: '/collections/hampers'
   },
   {
+    title: 'OCCASIONS',
+    image: '/images/festive_diwali_hamper.png',
+    link: '/collections/occasions'
+  },
+  {
     title: 'CORPORATE',
     image: '/images/corporate.png',
     link: '/collections/corporate'
   }
 ];
 
-const wa = '971501234567';
+const wa = '971553670255';
 ---
 <section id="collections" class="w-full bg-white py-16 sm:py-20 lg:py-24 border-b border-gray-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,8 +38,8 @@ const wa = '971501234567';
       </h2>
     </div>
 
-    <!-- 4-Column Grid matching mockup -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-8">
+    <!-- 5-Column Grid matching luxury look -->
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10 sm:gap-x-8">
       {collections.map(c => {
         const msg = encodeURIComponent(`Hi Bloom & Berry, I am interested in exploring your ${c.title} collection.`);
         return (
